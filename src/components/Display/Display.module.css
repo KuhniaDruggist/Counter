@@ -1,0 +1,23 @@
+.display {
+    min-width: 220px;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background-color: #61dafb;
+    border-radius: 5px;
+
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: bold;
+    color: #282c34;
+}
+
+.stop {
+    font-size: 56px;
+    color: red;
+}

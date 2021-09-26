@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Display.module.css'
 
 type DisplayPropsType = {
     maxValue: number
@@ -6,5 +7,5 @@ type DisplayPropsType = {
 }
 
 export const Display: React.FC<DisplayPropsType> = ({maxValue, counter}) => {
-    return <div className={`display ${counter === maxValue ? 'stop' : ''}`}>{counter}</div>
+    return <div className={`${ styles.display } ${counter === maxValue ? styles.stop : ''}`}>{counter}</div>
 }

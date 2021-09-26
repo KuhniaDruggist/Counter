@@ -2,58 +2,12 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
-
-}
-.counter {
-  min-width: 125px;
-  padding: 5px;
-  border: 3px solid #61dafb;
-  border-radius: 5px;
 }
 
-.display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 
-  background-color: #61dafb;
-  border-radius: 5px;
 
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: bold;
-  color: #282c34;
-}
 
-.stop {
-  font-size: 56px;
-  color: red;
-}
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  border: 3px solid #61dafb;
-  border-radius: 5px;
-}
-
-.button {
-  border: none;
-  border-radius: 5px;
-  background-color: #61dafb;
-  font-size: 20px;
-  font-weight: bold;
-  color: #282c34;
-}
-
-.button:disabled {
-  opacity: 0.1;
-}
