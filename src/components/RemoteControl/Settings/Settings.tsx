@@ -1,5 +1,5 @@
-import React, {ChangeEvent} from 'react';
-import styles from './Settings.module.css'
+import React, { ChangeEvent } from 'react';
+import styles from './Settings.module.css';
 
 type SettingsPropsType = {
     minValue: number
@@ -19,61 +19,64 @@ export const Settings: React.FC<SettingsPropsType> = (
         setMaxValue,
         setDisable,
         setMessage,
-        setError
+        setError,
     }) => {
-
-    let messageSuccess = 'enter values and press "set"';
-    let messageError = 'incorrect values!';
+    const messageSuccess = 'enter values and press "set"';
+    const messageError = 'incorrect values!';
 
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const number = +e.currentTarget.value
+        const number = +e.currentTarget.value;
         setMaxValue(number);
 
         if (number === minValue || number < minValue || number < 0 || minValue < 0) {
             setDisable(true);
             setError(true);
             setMessage(messageError);
-            return
+            return;
         }
         setDisable(false);
         setError(false);
         setMessage(messageSuccess);
-    }
+    };
 
     const onChangeMinHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const number = +e.currentTarget.value
-        setMinValue(number)
+        const number = +e.currentTarget.value;
+        setMinValue(number);
         if (number === maxValue || number < 0 || number > maxValue) {
             setDisable(true);
             setError(true);
             setMessage(messageError);
-            return
+            return;
         }
         setDisable(false);
         setError(false);
         setMessage(messageSuccess);
-    }
+    };
 
     return (
-        <div className={styles.settings}>
-            <label className={styles.field}>
+        <div className={ styles.settings }>
+            <label className={ styles.field }>
                 <span>max value:</span>
-                <input className={(maxValue < 0 || minValue === maxValue || maxValue < minValue)
-                    ? styles.error
-                    : styles.input}
-                       type="number"
-                       value={maxValue}
-                       onChange={onChangeMaxHandler}/>
+                <input
+                    className={ (maxValue < 0 || minValue === maxValue || maxValue < minValue)
+                        ? styles.error
+                        : styles.input }
+                    type="number"
+                    value={ maxValue }
+                    onChange={ onChangeMaxHandler }
+                />
             </label>
-            <label className={styles.field}>
+            <label className={ styles.field }>
                 <span>start value:</span>
-                <input className={(minValue < 0 || minValue === maxValue || maxValue < minValue)
-                    ? styles.error
-                    : styles.input}
-                       type="number"
-                       value={minValue}
-                       onChange={onChangeMinHandler}/>
+                <input
+                    className={ (minValue < 0 || minValue === maxValue || maxValue < minValue)
+                        ? styles.error
+                        : styles.input }
+                    type="number"
+                    value={ minValue }
+                    onChange={ onChangeMinHandler }
+                />
             </label>
         </div>
     );
-}
+};

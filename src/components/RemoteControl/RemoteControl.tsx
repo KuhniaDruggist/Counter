@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import styles from './RemoteControl.module.css'
-import {Button} from '../Button/Button';
-import {Settings} from './Settings/Settings';
+import React, { useState } from 'react';
+import styles from './RemoteControl.module.css';
+import { Button } from '../Button/Button';
+import { Settings } from './Settings/Settings';
 
 type RemoteControlPropsType = {
     minValue: number
@@ -21,30 +21,34 @@ export const RemoteControl: React.FC<RemoteControlPropsType> = (
         setMaxValue,
         setCounter,
         setMessage,
-        setError
+        setError,
     }) => {
-
-    const [disable, setDisable] = useState<boolean>(false);
+    const [ disable, setDisable ] = useState<boolean>(false);
 
     const setNewCounter = () => {
         setCounter(minValue);
         setMessage('');
         setDisable(true);
-    }
+    };
 
     return (
-        <div className={styles.remoteControl}>
-            <Settings minValue={minValue}
-                      maxValue={maxValue}
-                      setMinValue={setMinValue}
-                      setMaxValue={setMaxValue}
-                      setDisable={setDisable}
-                      setMessage={setMessage}
-                      setError={setError}/>
-            <div className={styles.buttons}>
-                <Button title="set" disabled={disable} onClickHandler={setNewCounter}/>
+        <div className={ styles.remoteControl }>
+            <Settings
+                minValue={ minValue }
+                maxValue={ maxValue }
+                setMinValue={ setMinValue }
+                setMaxValue={ setMaxValue }
+                setDisable={ setDisable }
+                setMessage={ setMessage }
+                setError={ setError }
+            />
+            <div className={ styles.buttons }>
+                <Button
+                    title="set"
+                    disabled={ disable }
+                    onClickHandler={ setNewCounter }
+                />
             </div>
         </div>
     );
-}
-
+};

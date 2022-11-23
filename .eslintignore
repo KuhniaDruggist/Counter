@@ -1,0 +1,10 @@
+/config/**
+/node/**
+/node_modules/**
+/packages/**
+/scripts/**/*test*/**
+/scripts/**/*mock*/**
+/scripts/common/libs
+/scripts/common/JqueryPlugins.js
+/service/**
+*.d.ts

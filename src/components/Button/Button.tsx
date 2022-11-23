@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Button.module.css'
+import styles from './Button.module.css';
 
 type ButtonPropsType = {
     title: string
@@ -7,13 +7,14 @@ type ButtonPropsType = {
     onClickHandler: () => void
 }
 
-export const Button: React.FC<ButtonPropsType> = ({title, disabled, onClickHandler}) => {
+export const Button: React.FC<ButtonPropsType> = ({ title, disabled, onClickHandler }) => {
     return (
-        <button type="button"
-                className={styles.button}
-                disabled={disabled}
-                onClick={onClickHandler}
-        >{title}
+        <button
+            type="button"
+            className={ styles.button }
+            disabled={ disabled }
+            onClick={ onClickHandler }
+        >{ title }
         </button>
     );
-}
+};
